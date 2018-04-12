@@ -1,11 +1,12 @@
 package calculator.trigonomicTests;
 
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class CosTest {
+public class CosTest extends ConfigurationTest {
 
     @Test(dataProvider = "DoubleCosMethodDataProvider", groups = {"exclude_group"})
     public void testDoubleCosMethod(double a, double expectedResult) throws Exception {

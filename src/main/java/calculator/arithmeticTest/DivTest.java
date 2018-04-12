@@ -1,5 +1,6 @@
 package calculator.arithmeticTest;
 
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -9,7 +10,7 @@ import java.util.Date;
 
 import static com.epam.tat.module4.Timeout.sleep;
 
-public class DivTest {
+public class DivTest extends ConfigurationTest {
 
     @Test(dataProvider = "DoubleDivMethodDataProvider", groups = {"include_group"})
     public void testDoubleDivMethod(double a, double b, double expectedResult) throws Exception {

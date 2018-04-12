@@ -1,11 +1,12 @@
 package calculator.trigonomicTests;
 
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SinTest {
+public class SinTest extends ConfigurationTest {
 
 
     @Test(dataProvider = "DoubleSinMethodDataProvider", groups = {"exclude_group"})

@@ -1,11 +1,12 @@
 package calculator.trigonomicTests;
 
 import calculator.CalculatorDataProvider;
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CtgTest {
+public class CtgTest extends ConfigurationTest {
 
 
 

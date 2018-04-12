@@ -1,11 +1,12 @@
 package calculator.arithmeticTest;
 
 import calculator.CalculatorDataProvider;
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SubTest {
+public class SubTest extends ConfigurationTest {
 
 
     @Test(dataProvider = "DoubleSubMethodDataProvider", groups = {"include_group"}, dataProviderClass = CalculatorDataProvider.class)

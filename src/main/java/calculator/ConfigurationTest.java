@@ -2,23 +2,24 @@ package calculator;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 public class ConfigurationTest {
 
 
     Calculator calculator;
 
-    @BeforeClass
+    @BeforeSuite
     public void beforeClass() {
-        System.out.println("@BeforeClass: I run only once, before first test start.");
+        System.out.println("@BeforeSuite: I run only once, before first test start.");
         calculator = new Calculator();
     }
 
-    @AfterClass
+    @AfterSuite
     public void afterClass() {
-        //Ideal place to perform some cleanup of setup which is shared among all tests.
-        System.out.println("@AfterClass: I run only once, after all tests have been done.\n");
+        System.out.println("@AfterSuite: I run only once, after all tests have been done.\n");
         calculator = null;
     }
 }

@@ -1,11 +1,12 @@
 package calculator.arithmeticTest;
 
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class DivZeroTest {
+public class DivZeroTest extends ConfigurationTest {
 
     @Test(dataProvider = "LongDivMethodDataProvider", groups = {"include_group"}, expectedExceptions = NumberFormatException.class)
     public void testLongDivMethod(long c, long d, long expectedResult) throws Exception {

@@ -1,11 +1,12 @@
 package calculator.arithmeticTest;
 
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class SqrtTest {
+public class SqrtTest extends ConfigurationTest {
 
     @Test(dataProvider = "DoublSqrtMethodDataProvider", groups = {"include_group"})
     public void testDoubleSqrtMethod(double a, double expectedResult) throws Exception {

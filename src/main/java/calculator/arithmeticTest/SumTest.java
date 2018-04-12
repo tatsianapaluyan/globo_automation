@@ -1,13 +1,14 @@
 package calculator.arithmeticTest;
 
 import calculator.CalculatorDataProvider;
+import calculator.ConfigurationTest;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-public class SumTest {
+public class SumTest extends ConfigurationTest {
 
 
     @Test(dataProvider = "DoubleSumMethodDataProvider", groups = {"include_group"}, dataProviderClass = CalculatorDataProvider.class)
