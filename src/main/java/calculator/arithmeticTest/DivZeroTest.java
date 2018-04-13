@@ -18,7 +18,7 @@ public class DivZeroTest extends ConfigurationTest {
     @DataProvider(name = "LongDivMethodDataProvider")
     public Object[][] longDivDataProvider() {
         return new Object[][]{
-                {3, 0, 3},
+                {3, 0, 0},
         };
     }
 }

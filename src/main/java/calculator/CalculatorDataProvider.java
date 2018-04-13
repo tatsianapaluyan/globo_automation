@@ -8,7 +8,7 @@ public class CalculatorDataProvider {
     @DataProvider(name = "DoubleSumMethodDataProvider")
     public Object[][] doubleSumDataProvider() {
         return new Object[][]{
-                {3.0, 2, 5},
+                {3.0, 2.3, 5.3},
                 {-3, 3, 0},
                 {-100, 100, 0},
         };
@@ -17,9 +17,9 @@ public class CalculatorDataProvider {
     @DataProvider(name = "LongSumMethodDataProvider")
     public Object[][] LongSumDataProvider() {
         return new Object[][]{
-                {3, 2, 5},
+                {3L, 2L, 5L},
                 {-6, 3, -3},
-                {-100, 100, 0},
+                {-1, 100, 99},
         };
     }
 
