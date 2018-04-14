@@ -6,12 +6,15 @@ import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.sun.tools.doclint.Entity.sum;
+import static java.lang.Double.valueOf;
+
 public class SubTest extends ConfigurationTest {
 
 
     @Test(dataProvider = "DoubleSubMethodDataProvider", groups = {"include_group"}, dataProviderClass = CalculatorDataProvider.class)
-    public void testDoubleSubMethod(double a, double b, double expectedResult) throws Exception {
-        double result = new Calculator().sub(a, b);
+    public void testDoubleSubMethod(String a, String b, double expectedResult) throws Exception {
+        double result = new Calculator().sum(valueOf(a), valueOf(b));
         Assert.assertEquals(result, expectedResult, "Invalid result of double sub, expected: " + expectedResult);
     }
 

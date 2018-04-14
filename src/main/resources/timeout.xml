@@ -1,7 +1,7 @@
 <suite name="Time test Suite" time-out="500" verbose="1" >
-    <test name="Timeout Test" >
-        <classes>
-            <class name="calculator.TestTimeout"/>
-        </classes>
-    </test>
+<test name="Timeout Test" >
+    <classes>
+        <class name="calculator.TestTimeout"/>
+    </classes>
+</test>
 </suite>

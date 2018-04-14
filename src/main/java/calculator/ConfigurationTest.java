@@ -1,10 +1,7 @@
 package calculator;
 
 import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 public class ConfigurationTest {
 

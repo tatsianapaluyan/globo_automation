@@ -26,9 +26,9 @@ public class CalculatorDataProvider {
     @DataProvider(name = "DoubleSubMethodDataProvider")
     public Object[][] doubleSubDataProvider() {
         return new Object[][]{
-                {3, 2, 1},
-                {-3, 3, -6},
-                {-100, 100, -200},
+                {"3", "2", 5.0},
+                {"-3", "3", 0.0},
+                {"-100", "100", 0.0},
         };
     }
 
