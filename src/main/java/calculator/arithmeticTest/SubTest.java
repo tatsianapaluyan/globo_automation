@@ -6,7 +6,6 @@ import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.sun.tools.doclint.Entity.sum;
 import static java.lang.Double.valueOf;
 
 public class SubTest extends ConfigurationTest {
