@@ -42,7 +42,7 @@
                     <!-- <trimStackTrace>false</trimStackT;race> -->
                     <!--<suitename>AllTests</suitename>-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->
                     <!--<skipTests>${skipTests}</skipTests>-->
