@@ -29,14 +29,8 @@
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>2.53.1</version>
+            <version>3.11.0</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -48,13 +42,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>2.53.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>2.53.1</version>
+            <version>3.11.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -85,9 +73,10 @@
                     <!--<suitename>AllTests</suitename>-->
                     <suiteXmlFiles>
                    <!--     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
-                        <suiteXmlFile>src/test/resources/driver.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->
+                    <!--     <suiteXmlFile>src/test/resources/driver.xml</suiteXmlFile>-->
+                     <suiteXmlFile>src/test/resources/pageObject.xml</suiteXmlFile>
+                 </suiteXmlFiles>
+                 <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->
                     <!--<skipTests>${skipTests}</skipTests>-->
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>

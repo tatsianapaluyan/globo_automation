@@ -2,6 +2,9 @@ package redeem.base;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -9,12 +12,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
     protected WebDriver driver;
+    ChromeOptions options = new ChromeOptions();
 
     protected boolean isElementPresent(By locator) {
         return driver.findElements(locator).size() != 0;
@@ -31,17 +37,18 @@ public class BaseTest {
     @Parameters({"browser"})
     @BeforeClass
     public void start(@Optional(value = "chrome") String browser) {
+        // options.addArguments("--disable-notifications");
+        options.addArguments("--use-fake-ui-for-media-stream=1");
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } else {
             System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         }
     }
-
 
     @AfterClass(alwaysRun = true)
     public void closeDriver() {

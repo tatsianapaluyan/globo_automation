@@ -9,10 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class ReedemTest extends BaseTest {
-    //private WebDriver driver;
-    // PageObject pageObject = new PageObject();
-    private static final int implicitTimeout = 15;
 
+    private static final int implicitTimeout = 15;
     private static final String URL = "https://test-web1-06.corp.globoforce.com/m?client=%s";
     private String clientName = "testclient5013";
     private String userName = "renee_recipient1";
