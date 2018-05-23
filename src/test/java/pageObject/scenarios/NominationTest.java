@@ -27,8 +27,9 @@ public class NominationTest extends BaseTest {
         AwardReasonType awardReasonType = new AwardReasonType(driver);
         awardReasonType.selectReason();
         awardReasonType.selectType();
-
-
+    }
+      @Test(dependsOnMethods = "myNominationTest")
+      public void verifyRedeemTest() throws InterruptedException {
         MessagePage messagePage = new MessagePage(driver);
         messagePage.addAwardTitle("Award Title");
         messagePage.addMessageToRecipient("Message to Recipient");
