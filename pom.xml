@@ -52,6 +52,9 @@
         </dependency>
     </dependencies>
     <build>
+
+
+
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -61,6 +64,8 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -71,10 +76,15 @@
                     <!--<groups>regressiontest</groups> -->
                     <!-- <trimStackTrace>false</trimStackT;race> -->
                     <!--<suitename>AllTests</suitename>-->
+                    <systemPropertyVariables>
+                        <browserType>${browserType}</browserType>
+                        <platform>${platform}</platform>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                    <!--     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
                     <!--     <suiteXmlFile>src/test/resources/driver.xml</suiteXmlFile>-->
-                     <suiteXmlFile>src/test/resources/pageObject.xml</suiteXmlFile>
+                    <!--   <suiteXmlFile>src/test/resources/pageObject.xml</suiteXmlFile>-->
+                        <suiteXmlFile>src/test/resources/configApp.xml</suiteXmlFile>
                  </suiteXmlFiles>
                  <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->
                     <!--<skipTests>${skipTests}</skipTests>-->
@@ -94,6 +104,8 @@
             <!-- <resource> <directory>src/test/resources</directory> </resource> -->
         </resources>
     </build>
-
-
+    <properties>
+        <browserType>${browserType}</browserType>
+        <platform>${platform}</platform>
+    </properties>
 </project>
