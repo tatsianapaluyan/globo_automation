@@ -50,6 +50,11 @@
             <artifactId>guava</artifactId>
             <version>22.0</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.18</version>
+        </dependency>
     </dependencies>
     <build>
 
@@ -83,7 +88,7 @@
                     <suiteXmlFiles>
                    <!--     <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
                     <!--     <suiteXmlFile>src/test/resources/driver.xml</suiteXmlFile>-->
-                    <!--   <suiteXmlFile>src/test/resources/pageObject.xml</suiteXmlFile>-->
+                    <!--   <suiteXmlFile>src/test/resources/pageobjects.xml</suiteXmlFile>-->
                         <suiteXmlFile>src/test/resources/configApp.xml</suiteXmlFile>
                  </suiteXmlFiles>
                  <!-- Build with '-DskipTests=true' to bypass test execution @ build time Default: false -->

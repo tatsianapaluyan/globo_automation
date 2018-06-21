@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite1" verbose="1" parallel="methods" thread-count="3">
+    <parameter name="firstvalue" value="6"/>
+    <parameter name="secondvalue" value="2"/>
+    <parameter name="result" value="3"/>
+    <test name="Calculator">
+        <classes>
+            <class name="tests.unittests.arithmetictest.DivTest"/>
+        </classes>
+    </test>
+</suite>
