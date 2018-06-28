@@ -52,7 +52,6 @@ public class ApprovalList extends BasePage {
         return okButton.getText();
     }
 
-
     public ApprovalList(WebDriver driver) {
         super(driver);
     }
