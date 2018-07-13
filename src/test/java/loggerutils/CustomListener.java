@@ -28,7 +28,7 @@ public class CustomListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         logger.info("Test method '" + result.getName() + "' FAILED");
-      //  ScreenshotUtils.captureScreenshot(BaseTest.getDriver(), result);
+        ScreenshotUtils.captureScreenshot(BaseTest.getWebDriver(), result);
     }
 
     @Override

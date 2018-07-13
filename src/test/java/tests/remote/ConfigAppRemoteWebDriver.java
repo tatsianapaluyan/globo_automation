@@ -1,5 +1,6 @@
 package tests.remote;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ConfigAppRemoteWebDriver {
+    private Logger logger = Logger.getLogger(getClass());
 
     @Test
     public void test() throws MalformedURLException {
@@ -37,7 +39,9 @@ public class ConfigAppRemoteWebDriver {
         //cap.setPlatform(Platform.valueOf(System.getProperty("platform", "LINUX")));
         URL url = new URL("http://192.168.2.1:3344/wd/hub");
         WebDriver driver = new RemoteWebDriver(url, cap);
+        logger.info("Open Globoforce site");
         driver.get("https://www.globoforce.com/");
+        logger.info("Verify title on Globoforce site");
         Assert.assertEquals(driver.getTitle(), "Globoforce | Elevate Workplace Culture and Performance | Globoforce");
         driver.quit();
     }

@@ -1,5 +1,6 @@
 package tests;
 
+import loggerutils.CustomListener;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,11 +8,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.*;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 
 import java.net.URL;
 import java.time.Duration;
@@ -23,14 +21,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
+@Listeners(CustomListener.class)
 public class BaseTest {
-    private WebDriver driver;
+    private static WebDriver driver;
 
     ChromeOptions options = new ChromeOptions();
 
-    public WebDriver getWebDriver() {
-        return this.driver;
+    public static WebDriver getWebDriver() {
+        return driver;
     }
 
     @Parameters({"browser"})
