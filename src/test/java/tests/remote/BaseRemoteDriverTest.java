@@ -1,14 +1,19 @@
 package tests.remote;
 
+import loggerutils.CustomListener;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+@Listeners(CustomListener.class)
 
 public class BaseRemoteDriverTest {
 
