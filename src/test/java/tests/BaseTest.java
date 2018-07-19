@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 
 import java.net.URL;
+
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -20,9 +21,12 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import tests.utilities.DriverManager;
+import tests.utilities.DriverManagerFactory;
 
 @Listeners(CustomListener.class)
 public class BaseTest {
+    private DriverManager driverManager;
     private static WebDriver driver;
 
     ChromeOptions options = new ChromeOptions();
@@ -35,13 +39,15 @@ public class BaseTest {
     @BeforeClass
     public void start(@Optional(value = "chrome") String browser) {
         options.addArguments("--use-fake-ui-for-media-stream=1");
-        if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-            driver = new ChromeDriver(options);
-        } else {
-            System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
-            driver = new ChromeDriver(options);
-        }
+//        if (browser.equalsIgnoreCase("chrome")) {
+//            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+//            driver = new ChromeDriver(options);
+//        } else {
+//            System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
+//            driver = new FirefoxDriver(options);
+//        }
+        driverManager = DriverManagerFactory.getManager(browser);
+        driver = driverManager.getInstance();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
